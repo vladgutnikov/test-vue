@@ -1,16 +1,18 @@
 <template>
   <v-bottom-navigation dark shift height="auto">
     <v-container>
-      <v-row>
+      <v-row class="justify-center">
         <v-col md="3">
-          <v-text-field
-            class="my-search"
-            v-model="search"
-            label="Search"
-            outlined
-            @input="getUserData"
-            prepend-inner-icon="search"
-          ></v-text-field>
+          <div class="wrapper-search">
+            <v-text-field
+              class="my-search"
+              v-model="search"
+              label="Search"
+              outlined
+              @input="getUserData"
+              prepend-inner-icon="search"
+            ></v-text-field>
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -30,6 +32,9 @@ export default {
 </script>
 
 <style>
+.wrapper-search {
+  position: relative;
+}
 .my-search {
   background: #ccc;
   height: 56px;
