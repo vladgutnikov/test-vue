@@ -1,50 +1,37 @@
 <template>
-  <v-bottom-navigation v-model="value" :background-color="color" dark shift>
-    <v-btn>
-      <span>Video</span>
-
-      <v-icon>mdi-television-play</v-icon>
-    </v-btn>
-
-    <v-btn>
-      <span>Music</span>
-
-      <v-icon>mdi-music-note</v-icon>
-    </v-btn>
-
-    <v-btn>
-      <span>Book</span>
-
-      <v-icon>mdi-book</v-icon>
-    </v-btn>
-
-    <v-btn>
-      <span>Image</span>
-
-      <v-icon>mdi-image</v-icon>
-    </v-btn>
+  <v-bottom-navigation dark shift height="auto">
+    <v-container>
+      <v-row>
+        <v-col md="3">
+          <v-text-field
+            class="my-search"
+            v-model="search"
+            label="Search"
+            outlined
+            @input="getUserData"
+            prepend-inner-icon="search"
+          ></v-text-field>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-bottom-navigation>
 </template>
 
 <script>
 export default {
-  data: () => ({ value: 1 }),
-
-  computed: {
-    color() {
-      switch (this.value) {
-        case 0:
-          return 'blue-grey';
-        case 1:
-          return 'teal';
-        case 2:
-          return 'brown';
-        case 3:
-          return 'indigo';
-        default:
-          return 'blue-grey';
-      }
+  data: () => ({ search: null }),
+  computed: {},
+  methods: {
+    getUserData() {
+      console.log(this.search);
     },
   },
 };
 </script>
+
+<style>
+.my-search {
+  background: #ccc;
+  height: 56px;
+}
+</style>
