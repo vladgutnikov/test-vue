@@ -52,6 +52,13 @@ export default {
         if (item.title.toUpperCase().indexOf(this.search.toUpperCase()) > -1)
           return item;
       });
+      if (this.filterData) this.sortData();
+    },
+    sortData() {
+      this.filterData.sort((a, b) => {
+        if (a.title.toLowerCase() < b.title.toLowerCase()) return -1;
+        else return 1;
+      });
     },
     clearDataArray() {
       if (!this.search) this.filterData = [];
