@@ -2,7 +2,7 @@
   <div>
     <v-bottom-navigation shift height="auto">
       <v-container>
-        <v-row class="justify-center">
+        <v-row>
           <v-col md="4">
             <div class="wrapper-search">
               <v-text-field
@@ -15,6 +15,20 @@
                 prepend-inner-icon="search"
               ></v-text-field>
             </div>
+          </v-col>
+          <v-col md="3">
+            <v-btn>
+              home
+              <v-icon x-large dark>home</v-icon>
+            </v-btn>
+            <v-btn>
+              My network
+              <v-icon x-large dark>view_list</v-icon>
+            </v-btn>
+            <v-btn>
+              Jobs
+              <v-icon x-large dark>work</v-icon>
+            </v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -50,16 +64,8 @@ export default {
 </script>
 
 <style lang="scss">
-.wrapper-search {
-  position: relative;
-
-  .my-search {
-    color: #000;
-  }
-}
 .my-search {
   background: #ccc;
   height: 56px;
-  color: #000;
 }
 </style>
