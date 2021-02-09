@@ -3,7 +3,7 @@
     <v-bottom-navigation shift height="auto">
       <v-container>
         <v-row>
-          <v-col md="4">
+          <v-col md="4" offset-md="4">
             <div class="wrapper-search">
               <v-text-field
                 class="my-search"
@@ -16,7 +16,7 @@
               ></v-text-field>
             </div>
           </v-col>
-          <v-col md="3">
+          <v-col md="4" class="d-flex justify-end">
             <v-btn>
               home
               <v-icon x-large dark>home</v-icon>
