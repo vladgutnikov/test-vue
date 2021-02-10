@@ -16,7 +16,7 @@ describe('ListItems.vue', () => {
     expect(shallowMount(ListItems)).toBeTruthy();
   });
 
-  it('renders a div', () => {
+  it('checking props', () => {
     const newWrapper = mount(ListItems, {
       localVue,
       vuetify,

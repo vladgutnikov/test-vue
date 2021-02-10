@@ -10,8 +10,8 @@
                 v-model="search"
                 label="Search"
                 outlined
-                @input="getUserData"
-                @blur="clearDataArray"
+                @focus="search = ''"
+                @blur="search = null"
                 prepend-inner-icon="search"
               ></v-text-field>
             </div>
@@ -33,62 +33,60 @@
         </v-row>
       </v-container>
     </v-bottom-navigation>
-    <ListItems :items="filterData" />
+    <ListItems :items="filteredData" />
   </div>
 </template>
 
 <script>
-import ListItems from './ListItems';
-import {
-  VBtn,
-  VIcon,
-  VCol,
-  VRow,
-  VContainer,
-  VBottomNavigation,
-  VTextField,
-} from 'vuetify/lib';
-import data from '../data/data.json';
-
-export default {
-  data: () => ({ search: null, items: [], filterData: [] }),
-  components: {
-    ListItems,
+  // components
+  import ListItems from './ListItems';
+  import {
     VBtn,
     VIcon,
     VCol,
     VRow,
     VContainer,
     VBottomNavigation,
-    VTextField,
-  },
-  methods: {
-    getUserData() {
-      this.filterData = this.items.filter((item) => {
-        if (item.title.toUpperCase().indexOf(this.search.toUpperCase()) > -1)
-          return item;
-      });
-      if (this.filterData) this.sortData();
+    VTextField
+  } from 'vuetify/lib';
+
+  // mock data
+  import data from '../data/data.json';
+
+  export default {
+    name: 'Headers',
+    components: {
+      ListItems,
+      VBtn,
+      VIcon,
+      VCol,
+      VRow,
+      VContainer,
+      VBottomNavigation,
+      VTextField
     },
-    sortData() {
-      this.filterData.sort((a, b) => {
-        if (a.title.toLowerCase() < b.title.toLowerCase()) return -1;
-        else return 1;
-      });
+    data: () => ({
+      search: null,
+      items: []
+    }),
+    created() {
+      this.items = [...data].sort(({ title: a }, { title: b }) =>
+        a.toLowerCase() < b.toLowerCase() ? -1 : 1
+      );
     },
-    clearDataArray() {
-      if (!this.search) this.filterData = [];
+    computed: {
+      filteredData() {
+        return this.items.filter(({ title }) => 
+          this.search !== null && title.toLowerCase().includes(this.search.toLowerCase())
+        );
+      }
     },
-  },
-  mounted() {
-    this.items = [...data];
-  },
-};
+  };
 </script>
 
 <style>
-.my-search {
-  background: #ccc;
-  height: 56px;
-}
+  .my-search {
+    background: #ccc;
+    height: 56px;
+  }
 </style>
