@@ -38,10 +38,38 @@
 </template>
 
 <script>
+import {
+  VListItemTitle,
+  VListItemSubtitle,
+  VListItemContent,
+  VCard,
+  VList,
+  VSubheader,
+  VListItem,
+  VCol,
+  VRow,
+  VContainer,
+} from 'vuetify/lib';
+
 export default {
+  components: {
+    VListItemTitle,
+    VListItemSubtitle,
+    VListItemContent,
+    VSubheader,
+    VCard,
+    VList,
+    VListItem,
+    VCol,
+    VRow,
+    VContainer,
+  },
   props: {
     items: {
       type: Array,
+      default: () => {
+        return [];
+      },
     },
   },
 };

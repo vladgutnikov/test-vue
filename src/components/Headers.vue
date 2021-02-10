@@ -39,12 +39,28 @@
 
 <script>
 import ListItems from './ListItems';
+import {
+  VBtn,
+  VIcon,
+  VCol,
+  VRow,
+  VContainer,
+  VBottomNavigation,
+  VTextField,
+} from 'vuetify/lib';
 import data from '../data/data.json';
 
 export default {
   data: () => ({ search: null, items: [], filterData: [] }),
   components: {
     ListItems,
+    VBtn,
+    VIcon,
+    VCol,
+    VRow,
+    VContainer,
+    VBottomNavigation,
+    VTextField,
   },
   methods: {
     getUserData() {
@@ -70,7 +86,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 .my-search {
   background: #ccc;
   height: 56px;

@@ -5,9 +5,10 @@
 </template>
 
 <script>
+import { VApp } from 'vuetify/lib';
 import Headers from './components/Headers';
 export default {
   name: 'App',
-  components: { Headers },
+  components: { Headers, VApp },
 };
 </script>
