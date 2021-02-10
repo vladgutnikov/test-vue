@@ -36,4 +36,9 @@ describe('Home.vue', () => {
   it('component snapshot Home.vue', () => {
     expect(newWrapper.html()).toMatchSnapshot();
   });
+
+  it('set data', () => {
+    newWrapper.setData({ search: 'bar' });
+    expect(newWrapper.vm.search).toBe('bar');
+  });
 });
