@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home.vue should have match snapshot 1`] = `
+exports[`Home.vue component snapshot Home.vue 1`] = `
 "<div>
   <div class=\\"v-bottom-navigation v-item-group theme--light v-bottom-navigation--shift\\" style=\\"height: auto; transform: none;\\">
     <div class=\\"container\\">

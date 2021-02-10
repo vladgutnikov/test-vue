@@ -33,7 +33,7 @@ describe('Home.vue', () => {
     expect(newWrapper.vm.search).toBe('84102');
   });
 
-  it('should have match snapshot', () => {
+  it('component snapshot Home.vue', () => {
     expect(newWrapper.html()).toMatchSnapshot();
   });
 });

@@ -28,7 +28,7 @@ describe('ListItems.vue', () => {
     expect(newWrapper.props().items[0]).toEqual({ title: 'Hello world' });
   });
 
-  it('should have match snapshot', () => {
+  it('component snapshot ListItems.vue', () => {
     const newWrapper = mount(ListItems, {
       localVue,
       vuetify,
